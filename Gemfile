@@ -15,6 +15,7 @@ gem 'simple_form', '>= 3.0.0.rc'
 gem "private_pub"
 gem "thin"
 gem 'awesome_print'
+gem 'therubyracer'
 
 group :development do
   gem 'better_errors'
