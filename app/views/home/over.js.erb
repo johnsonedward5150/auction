@@ -1,0 +1,11 @@
+<% publish_to "/messages/new" do %>
+  var msg = '';
+  if($(':checked').length == 0){
+    msg = 'No one placed a bid :(';
+  }else{
+    var user_id = $(':checked').last().parent().attr('data-user');
+    var bid = $(':checked').last().val();
+    msg = user_id + ' has won with a bid of: ' + bid + '%';
+  }
+  alert(msg);
+<% end %>

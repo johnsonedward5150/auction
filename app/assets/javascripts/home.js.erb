@@ -1,0 +1,42 @@
+Auction = {};
+
+Auction.start_timer = function(){
+  Auction.start_button.addClass('disabled').html('Running...').blur();
+  $('.bids-wrap').fadeIn(300);
+  Auction.seconds = 5;
+  $('.timer').html(Auction.seconds + ' seconds');
+  Auction.timer = setInterval(Auction.tick, 1000);
+}
+
+Auction.tick = function(){
+  $('.timer').html(--Auction.seconds + ' seconds');
+  if(Auction.seconds == 0){
+    clearInterval(Auction.timer);
+    Auction.start_button.html('Auction over');
+    Auction.over();
+  }
+}
+
+Auction.over = function(){
+  $(':checkbox').prop('disabled', 'disabled');
+  $.get('home/over');
+}
+
+$(function(){
+
+  Auction.start_button = $('.btn-start');
+
+  Auction.start_button.not('.disabled').click(function(e) {
+    e.preventDefault();
+    $.get('/home/timer');
+  });
+
+  $(':checkbox').each(function(){
+    $(this).removeAttr('disabled').removeAttr('checked');
+  });
+
+  $(':checkbox').change(function(e) {
+    $.get('/home/bid', {checkbox_id: $(this).attr('id'), user_id: Auction.user_id});
+  });
+
+});

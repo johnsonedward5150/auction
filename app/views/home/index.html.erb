@@ -1,0 +1,43 @@
+<%= subscribe_to "/messages/new" %>
+
+<script>
+  Auction.user_id = "<%= @user_id %>";
+</script>
+
+<div class="page-header">
+  <h1>RTCA (Real Time Crab Auction)</h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>Your user ID: <strong><%= @user_id %></strong></p>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <a href="" class="btn btn-success btn-lg btn-start">Start the auction</a>
+
+    <h2>Timer:</h2>
+    <div class="timer">Auction has not yet started.</div>
+  </div>
+</div>
+
+<div class="panel panel-default bids-wrap">
+  <div class="panel-body">
+
+    <h3>Bids</h3>
+    <p>Click the checkbox to place the bid.</p>
+
+    <form action="">
+      <div class="checkbox"><label for="checkbox_30"><input id="checkbox_30" type="checkbox" value="30.00"> 30.00%</label></div>
+      <div class="checkbox"><label for="checkbox_295"><input id="checkbox_295" type="checkbox" value="29.50"> 29.50%</label></div>
+      <div class="checkbox"><label for="checkbox_29"><input id="checkbox_29" type="checkbox" value="29.00"> 29.00%</label></div>
+      <div class="checkbox"><label for="checkbox_285"><input id="checkbox_285" type="checkbox" value="28.50"> 28.50%</label></div>
+      <div class="checkbox"><label for="checkbox_28"><input id="checkbox_28" type="checkbox" value="28.00"> 28.00%</label></div>
+      <div class="checkbox"><label for="checkbox_275"><input id="checkbox_275" type="checkbox" value="27.50"> 27.50%</label></div>
+    </form>
+
+  </div>
+</div>

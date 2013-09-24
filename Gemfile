@@ -7,21 +7,27 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'bootstrap-sass', '~> 2.3.2.2'
+gem 'bootstrap-sass-rails'
 gem 'devise'
 gem 'figaro'
 gem 'mysql2'
 gem 'simple_form', '>= 3.0.0.rc'
+gem "private_pub"
+gem "thin"
+gem 'awesome_print'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'

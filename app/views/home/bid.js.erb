@@ -1,0 +1,4 @@
+<% publish_to "/messages/new" do %>
+  $('#<%= @checkbox_id %>').prop('disabled', 'disabled').prop('checked', 'checked').blur();
+  $('#<%= @checkbox_id %>').parent().attr('data-user', '<%= @user_id %>').append(' - <em>Placed by user: <%= @user_id %></em>');
+<% end %>
