@@ -3,7 +3,7 @@ Auction = {};
 Auction.start_timer = function(){
   Auction.start_button.addClass('disabled').html('Running...').blur();
   $('.bids-wrap').fadeIn(300);
-  Auction.seconds = 5;
+  Auction.seconds = 15;
   $('.timer').html(Auction.seconds + ' seconds');
   Auction.timer = setInterval(Auction.tick, 1000);
 }
